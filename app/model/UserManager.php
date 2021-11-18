@@ -55,7 +55,7 @@ class UserManager
         $this->database->query('UPDATE `users` SET', [
             'user_name' => $values->username,
             'type' => $values->type,
-        ], 'WHERE email = ?', $values->user_email); 
+        ], 'WHERE email = ?', $values->email); 
     }
         
     public function deleteUser($user_email)

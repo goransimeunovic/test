@@ -37,8 +37,14 @@ class UserPresenter extends BasePresenter
     
     public function renderEdituser($user_email)
     {
-        $this->template->userinfo = $this->userManager->getUserbyEmail($user_email);
-    }
+        $user_infos = $this->userManager->getUserbyEmail($user_email);
+        
+        foreach ($user_infos as $value){
+            $this->userInfo['username'] = $value['user_name'];
+            $this->userInfo['email'] = $value['email'];
+            $this->userInfo['type'] = $value['type'];
+        }
+    }   
     
     
     /**
@@ -90,16 +96,8 @@ class UserPresenter extends BasePresenter
      * 
      * @return Form
      */
-    protected function createComponentEditUser($user_email)
+    protected function createComponentEditUser()
     {   
-        $user_infos = $this->userManager->getUserbyEmail($user_email);
-        
-        foreach ($user_infos as $value){
-            $this->userInfo['user_name'] = $value['user_name'];
-            $this->userInfo['email'] = $value['email'];
-            $this->userInfo['type'] = $value['type'];
-        }
-        
         $form = new Form;
         
         $form->addEmail('email', '')->setDisabled(false)
