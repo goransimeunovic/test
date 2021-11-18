@@ -1,0 +1,47 @@
+{block content}
+
+<form n:name=editUser class="form">
+    <div class="user-form-header">
+        <strong>Edit user</strong>
+    </div>
+    <div class="user-form-body user-block">
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="username" class="form-control-label">
+                    Jmeno uzivatele
+                </label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="text" id="username" n:name=username class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="email" class="form-control-label">
+                    Email
+                </label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input type="email" id="email" n:name=email class="form-control">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label for="type" class=" form-control-label">
+                    Typ
+                </label>
+            </div>
+            <div class="col-12 col-md-9">
+                <select n:name=type id="type" class="form-control" >
+                </select>
+            </div>
+        </div>
+                                    
+        <div class="user-form-footer">
+            <button type="submit" class="btn btn-primary btn-sm">
+                <i class="fa fa-dot-circle-o"></i> Upravit uzivatele
+            </button>
+        </div>
+    </div>
+</form>
+            
