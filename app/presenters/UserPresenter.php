@@ -62,11 +62,11 @@ class UserPresenter extends BasePresenter
         
         $form->addText('username', '')->setDisabled(false);
         
-        $type = array(
+        $type = [
             "user" => "User",
             "moderator" => "Moderator",
             "admin" => "Admin"
-        );
+        ];
         
         $form->addSelect('type', '',$type)
         ->setDefaultValue($this->userInfo['type']);
@@ -107,11 +107,11 @@ class UserPresenter extends BasePresenter
         $form->addText('username', '')->setDisabled(false)
         ->setValue($this->userInfo['username']);
         
-        $type = array(
+        $type = [
             "user" => "User",
             "moderator" => "Moderator",
             "admin" => "Admin"
-        );
+        ];
         
         $form->addSelect('type', '',$type)
         ->setDefaultValue($this->userInfo['type'])

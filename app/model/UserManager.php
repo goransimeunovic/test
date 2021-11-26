@@ -36,11 +36,11 @@ class UserManager
     
     public function insertNewUser($values){
            
-            $params = array(               
+            $params = [               
                 'username' => $values->username,
                 'email' => $values->email,
                 'type' => $values->type,
-            ) ;
+            ] ;
             
             $this->database->query('INSERT INTO users', [$params]);
             
