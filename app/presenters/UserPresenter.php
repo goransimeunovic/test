@@ -40,7 +40,7 @@ class UserPresenter extends BasePresenter
         $user_infos = $this->userManager->getUserbyEmail($user_email);
         
         foreach ($user_infos as $value){
-            $this->userInfo['username'] = $value['user_name'];
+            $this->userInfo['username'] = $value['username'];
             $this->userInfo['email'] = $value['email'];
             $this->userInfo['type'] = $value['type'];
         }

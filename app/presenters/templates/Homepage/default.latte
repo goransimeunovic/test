@@ -17,16 +17,16 @@
             </tr>
         </thead>
         <tbody>
-            {foreach $users as $user_info}
+            {foreach $users as $userInfo}
                 <tr>
-                    <td>{$user_info->user_name}</td>
-                    <td>{$user_info->email}</td>
-                    <td>{$user_info->type}</td>
+                    <td>{$userInfo->username}</td>
+                    <td>{$userInfo->email}</td>
+                    <td>{$userInfo->type}</td>
                     <td>
-                        <a href = '{link User:edituser $user_info->email}'>
+                        <a href = '{link User:edituser $userInfo->email}'>
                             <i class="fa fa-edit"></i>
                         </a>
-                        <a href = '{link User:delete $user_info->email}'>
+                        <a href = '{link User:delete $userInfo->email}'>
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </a>
                     </td>

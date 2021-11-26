@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Model;
-/*namespace App\Presenters;*/
 
 use Nette;
 
@@ -13,10 +12,7 @@ class UserManager
 {
 	const
 		TABLE_NAME = 'users',
-		COLUMN_ID = 'user_id',
-		COLUMN_NAME = 'user_name',
-		COLUMN_EMAIL = 'email',
-		COLUMN_TYPE = 'type';
+		COLUMN_NAME = 'username';
 
 
 	/** @var Nette\Database\Context */
@@ -41,7 +37,7 @@ class UserManager
     public function insertNewUser($values){
            
             $params = array(               
-                'user_name' => $values->username,
+                'username' => $values->username,
                 'email' => $values->email,
                 'type' => $values->type,
             ) ;
@@ -53,20 +49,20 @@ class UserManager
         
     public function editUser($values){    
         $this->database->query('UPDATE `users` SET', [
-            'user_name' => $values->username,
+            'username' => $values->username,
             'type' => $values->type,
         ], 'WHERE email = ?', $values->email); 
     }
         
-    public function deleteUser($user_email)
+    public function deleteUser($userEmail)
     {       
-        $this->database->query('DELETE FROM `users` WHERE email = ?', $user_email);
+        $this->database->query('DELETE FROM `users` WHERE email = ?', $userEmail);
     }
     
     
-    public function getUserbyEmail($user_email)
+    public function getUserbyEmail($userEmail)
     {
-        return $result = $this->database->fetchAll('SELECT * FROM `users` WHERE `email` = ? ', $user_email);
+        return $result = $this->database->fetchAll('SELECT * FROM `users` WHERE `email` = ? ', $userEmail);
     }
 }
 
