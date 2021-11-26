@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Čtv 18. lis 2021, 14:41
+-- Vytvořeno: Pát 26. lis 2021, 07:24
 -- Verze serveru: 10.4.18-MariaDB
 -- Verze PHP: 7.3.27
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `user_id` int(10) NOT NULL,
-  `user_name` varchar(50) NOT NULL,
+  `userid` int(10) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,9 +38,9 @@ CREATE TABLE `users` (
 -- Vypisuji data pro tabulku `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `email`, `type`) VALUES
+INSERT INTO `users` (`userid`, `username`, `email`, `type`) VALUES
 (1, 'Goran Simeunovic', 'goran.simeunovic@gmail.com', 'admin'),
-(2, 'test1', 'test@test.cz', 'moderator');
+(5, 'test1', 'test1@test.cz', 'moderator');
 
 --
 -- Indexy pro exportované tabulky
@@ -50,7 +50,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `email`, `type`) VALUES
 -- Indexy pro tabulku `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`userid`);
 
 --
 -- AUTO_INCREMENT pro tabulky
@@ -60,7 +60,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pro tabulku `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
